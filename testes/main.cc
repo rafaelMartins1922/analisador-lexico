@@ -1,7 +1,10 @@
 #include <stdio.h>
 
-extern int yylex();
+extern "C" int yylex();  
+
 extern char* yytext;
+
+#include "lex.yy.c"
 
 int main() {
   int token = yylex(); // next_token
